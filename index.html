@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reading List</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main class="container">
+        <header>
+            <h1>My Reading List</h1>
+            <p class="subtitle">Track what you want to read, what you're reading, and what you've finished.</p>
+        </header>
+
+        <form id="bookForm" class="card form" novalidate>
+            <div class="field grow">
+                <label for="titleInput">Book title</label>
+                <input id="titleInput" type="text" placeholder="e.g. Atomic Habits" autocomplete="off">
+                <small id="charCount">0 / 60</small>
+            </div>
+            <div class="field">
+                <label for="statusInput">Status</label>
+                <select id="statusInput">
+                    <option>Want to Read</option>
+                    <option>Reading</option>
+                    <option>Finished</option>
+                </select>
+            </div>
+            <button type="submit" class="btn primary">Add Book</button>
+            <p id="errorMsg" class="error" role="alert"></p>
+        </form>
+
+        <section class="summary" aria-label="Summary">
+            <div class="stat"><span id="totalCount">0</span><label>Total Books</label></div>
+            <div class="stat"><span id="readingCount">0</span><label>Currently Reading</label></div>
+            <div class="stat"><span id="finishedCount">0</span><label>Finished</label></div>
+        </section>
+
+        <nav class="filters" aria-label="Filter books">
+            <button class="chip active" data-filter="All">All</button>
+            <button class="chip" data-filter="Want to Read">Want to Read</button>
+            <button class="chip" data-filter="Reading">Reading</button>
+            <button class="chip" data-filter="Finished">Finished</button>
+        </nav>
+
+        <p id="emptyMsg" class="empty">Your reading list is empty. Add your first book.</p>
+        <ul id="bookList" class="book-list"></ul>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
